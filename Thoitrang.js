@@ -1,90 +1,156 @@
-var man = [
-    {
-      id:1,
-      name: "Quần short kaki đen",
-      code: "TN001",
-      price: "150.000",
-      image: "https://cdn.santino.com.vn/storage/upload/products/2023/05/quan-short-gio-nam-the-thao-g104-1.webp"
-    },
-    {
-      id:2,
-      name: "Quần baggy đen",
-      code: "TN002",
-      price: "180.000",
-      image: "https://cdn.santino.com.vn/storage/upload/products/2023/12/quan-short-nam-mau-den-cao-cap.webp"
-    },
-    {
-      id:3,
-      name: "Áo thun nam",
-      code: "TN003",
-      price: "200.000",
-      image: "https://cdn.santino.com.vn/storage/upload/products/2023/04/ao-phong-nam-chat-lieu-cotton-e808-01.webp"
-    },
-    {
-      id:4,
-      name: "Áo sơ mi tay dài",
-      code: "TN004",
-      price: "175.000",
-      image: "https://cdn.santino.com.vn/storage/upload/products/2023/10/ao-so-mi-nam-dai-tay-cao-cap-s675-01.webp"
-    },
-  ];
-  var woman = [
-    {
-      id:1,
-      name: "Váy Fashion",
-      code: "TN011",
-      price: "170.000",
-      image: "https://milvus.com.vn/wp-content/uploads/2023/08/Milvus-07-1.png"
-    },
-    {
-      id:2,
-      name: "Áo thun tay ngắn",
-      code: "TN012",
-      price: "100.000",
-      image: "https://milvus.com.vn/wp-content/uploads/2023/08/BRP026WWVI20-1.png"
-    },
-    {
-      id:3,
-      name: "Đầm công sở",
-      code: "TN013",
-      price: "200.000",
-      image: "https://milvus.com.vn/wp-content/uploads/2023/08/LZGD001WFOC038.jpg"
-    },
-    {
-      id:4,
-      name: "Đồ bộ nữ",
-      code: "TN014",
-      price: "155.000",
-      image: "https://milvus.com.vn/wp-content/uploads/2023/08/BRBC019WBK01.jpg"
-    },
-  ];
-  function listProducts(){
-    for (let i=0;i<=man.length-1;i++){
-      var demo= '<div class="col-3">';
-      demo += '<div class="card" style="width: 18rem">';
-      demo += '<img src="'+man[i].image+'"class="card-img-top" style="height:300px;">';
-      demo += '<div class="card-body">';
-      demo += '<h5 class="card-title">'+man[i].name+'</h5>';
-      demo += '<p class="card-text">'+man[i].price+' vnđ</p>';
-      demo += '<a href="#" class="btn btn-success" onclick="oder()">Đặt mua</a>'
-      demo += '</div>';
-      demo += '</div>';
-      demo += '</div>';
-      console.log(demo);
-      document.getElementById("man").innerHTML +=demo;
-    }
-    for (let i=0;i<=woman.length-1;i++){
-      var demo= '<div class="col-3">';
-      demo += '<div class="card" style="width: 18rem">';
-      demo += '<img src="'+woman[i].image+'"class="card-img-top" style="height:300px;">';
-      demo += '<div class="card-body">';
-      demo += '<h5 class="card-title">'+woman[i].name+'</h5>';
-      demo += '<p class="card-text">'+woman[i].price+' vnđ</p>';
-      demo += '<a href="#" class="btn btn-danger" onclick="oder()">Đặt mua</a>'
-      demo += '</div>';
-      demo += '</div>';
-      demo += '</div>';
-      console.log(demo);
-      document.getElementById("woman").innerHTML +=demo;
-    }
+const man = [
+  {
+    id: 1,
+    name: "The Cosmo (Đen) Quần short khaki",
+    code: "TC1025011BA",
+    price: "250.000",
+    image:
+      "https://th.bing.com/th/id/R.156d63bdd3c4b16f1e69e4c46fe9e3ae?rik=uvf3u09wqgAvLw&pid=ImgRaw&r=0",
+    discount: "100.000 vnđ",
+  },
+
+  {
+    id: 2,
+    name: "Quần baggy đen sang trọng QQ",
+    code: "TC1025011BA",
+    price: "398.000",
+    image: "https://cf.shopee.vn/file/6464d23c90ea5ca5a782888abbff08a9",
+    discount: "100.000 vnđ",
+  },
+
+  {
+    id: 3,
+    name: "The Cosmo (Hồng) Quần short khaki",
+    code: "TC1025011BA",
+    price: "300.000",
+    image:
+      "https://th.bing.com/th/id/R.156d63bdd3c4b16f1e69e4c46fe9e3ae?rik=uvf3u09wqgAvLw&pid=ImgRaw&r=0",
+    discount: "200.000 vnđ",
+  },
+
+  {
+    id: 4,
+    name: "The Cosmo (Trắng) Quần short khaki",
+    code: "TC1025011BA",
+    price: "400.000",
+    image: "https://cf.shopee.vn/file/6464d23c90ea5ca5a782888abbff08a9",
+    discount: "269.000 vnđ",
+  },
+];
+const women = [
+  {
+    id: 1,
+    name: "Váy fashion",
+    code: "TC1025011BA",
+    price: "250.000",
+    image:
+      "https://i.pinimg.com/originals/37/ba/a2/37baa25a7b95cd788f4b0ec67320e286.jpg",
+    discount: "50.000 vnđ",
+  },
+
+  {
+    id: 2,
+    name: "Áo thun phối váy ngắn",
+    code: "TC1025011BA",
+    price: "398.000",
+    image:
+      "https://th.bing.com/th/id/OIP.M3qYb3NEWc1CILGmYCEuCwHaHa?rs=1&pid=ImgDetMain",
+    discount: "200.000 vnđ",
+  },
+
+  {
+    id: 3,
+    name: "Áo khoác",
+    code: "TC1025011BA",
+    price: "300.000",
+    image:
+      "https://th.bing.com/th/id/OIP.M3qYb3NEWc1CILGmYCEuCwHaHa?rs=1&pid=ImgDetMain",
+    discount: "20.000 vnđ",
+  },
+
+  {
+    id: 4,
+    name: "Áo thun",
+    code: "TC1025011BA",
+    price: "400.000",
+    image:
+      "https://down-vn.img.susercontent.com/file/sg-11134201-22100-pbrp1w40vviv42",
+    discount: "29.000 vnđ",
+  },
+];
+
+function show(data) {
+  var html = "";
+  for (var i = 0; i < data.length; i++) {
+    html += "<div class='card'>";
+    html += "<img src='" + data[i].image + "' alt='product image'>";
+    html += "<div class='card-body'>";
+    html += "<h5 class='card-title'>" + data[i].name + "</h5>";
+    html += "<p class='card-text'>Price: " + data[i].price + "</p>";
+    html += "<p class='card-text'>Discount: " + data[i].discount + "</p>";
+    html += "<button onclick='editProduct(" + i + ")'>Edit</button>";
+    html += "<button onclick='deleteProduct(" + i + ")'>Delete</button>";
+    html += "</div></div>";
   }
+
+  document.getElementById("tbl").innerHTML = html;
+}
+
+function createProduct() {
+  var productName = document.getElementById("productName").value;
+  var productImage = document.getElementById("productImage").value;
+  var productPrice = document.getElementById("productPrice").value;
+  var productDiscount = document.getElementById("productDiscount").value;
+  var productGender = document.getElementById("productGender").value;
+
+  var newProduct = {
+    name: productName,
+    image: productImage,
+    price: productPrice,
+    discount: productDiscount,
+  };
+
+  if (productGender === "men") {
+    man.push(newProduct);
+  } else if (productGender === "women") {
+    women.push(newProduct);
+  }
+
+  document.getElementById("productName").value = "";
+  document.getElementById("productImage").value = "";
+  document.getElementById("productPrice").value = "";
+  document.getElementById("productDiscount").value = "";
+
+  show(productGender === "men" ? man : women);
+}
+
+function editProduct(index) {
+  document.getElementById("editProductName").value = man[index].name;
+  document.getElementById("editProductImage").value = man[index].image;
+  document.getElementById("editProductPrice").value = man[index].price;
+  document.getElementById("editProductDiscount").value = man[index].discount;
+
+  document.getElementById("editForm").style.display = "block";
+}
+
+function updateProduct() {
+  var newName = document.getElementById("editProductName").value;
+  var newImage = document.getElementById("editProductImage").value;
+  var newPrice = document.getElementById("editProductPrice").value;
+  var newDiscount = document.getElementById("editProductDiscount").value;
+
+  var indexToUpdate = parseInt(document.getElementById("editIndex").value);
+  man[indexToUpdate].name = newName;
+  man[indexToUpdate].image = newImage;
+  man[indexToUpdate].price = newPrice;
+  man[indexToUpdate].discount = newDiscount;
+
+  document.getElementById("editForm").style.display = "none";
+
+  show(man);
+}
+
+function deleteProduct(index) {
+  man.splice(index, 1);
+  show(man);
+}
